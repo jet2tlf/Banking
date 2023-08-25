@@ -9,6 +9,10 @@ public class Person {
     private String cpf;
     private String email;
 
+    public Person() {
+
+    }
+
     public Person(String nome, String cpf, String email) {
         this.nome = nome;
         this.cpf = cpf;

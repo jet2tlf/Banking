@@ -2,6 +2,8 @@ package org.banking;
 
 import org.banking.Utils.Utils;
 
+import javax.swing.*;
+
 public class Account {
     private static int AccountCounter = 1;
 
@@ -46,27 +48,28 @@ public class Account {
     public void Deposit(Double value) {
         if (value > 0) {
             setBalance(getBalance() + value);
-            System.out.println("Seu depósito foi realizado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Seu depósito foi realizado com sucesso!");
         } else {
-            System.out.println("Não foi possivel realizar o depósito!");
+            JOptionPane.showMessageDialog(null, "Não foi possivel realizar o depósito!");
         }
     }
 
     public void Withdraw(Double value) {
         if (value > 0 && this.getBalance() >= value) {
             setBalance(getBalance() - value);
-            System.out.println("Saque realizado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Saque realizado com sucesso!");
         } else {
-            System.out.println("Não foi possivel realizar o saque!");
+            JOptionPane.showMessageDialog(null, "Não foi possivel realizar o saque!");
         }
     }
 
     public void Transfer(Account accountToDeposit, Double value) {
         if (value > 0 && this.getBalance() >= value) {
+            setBalance(getBalance() - value);
             accountToDeposit.balance = accountToDeposit.getBalance() + value;
-            System.out.println("Transferência realizada com sucesso!");
+            JOptionPane.showMessageDialog(null, "Transferência realizada com sucesso!");
         } else {
-            System.out.println("Não foi possivel realizar a transferência!");
+            JOptionPane.showMessageDialog(null, "Não foi possivel realizar a transferência!");
         }
     }
 }

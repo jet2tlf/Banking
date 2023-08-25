@@ -9,9 +9,4 @@ public class Utils {
     public static String dubleToString(Double value) {
         return formatingValue.format(value);
     }
-
-    /// public static void Clear() {
-        // System.out.print("\033[H\033[2J");
-        // System.out.flush();
-    // }
 }
